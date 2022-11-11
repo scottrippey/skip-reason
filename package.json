@@ -1,0 +1,20 @@
+{
+  "name": "skip-reason",
+  "version": "1.0.0",
+  "description": "Only skip tests if you have a good reason!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottrippey/skip-reason.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scottrippey/skip-reason/issues"
+  },
+  "homepage": "https://github.com/scottrippey/skip-reason#readme"
+}
