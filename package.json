@@ -1,10 +1,13 @@
 {
   "name": "skip-reason",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Only skip tests if you have a good reason!",
-  "main": "index.js",
+  "main": "dist/skip-reason.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "preversion": "npm run check",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/scottrippey/skip-reason/issues"
   },
-  "homepage": "https://github.com/scottrippey/skip-reason#readme"
+  "homepage": "https://github.com/scottrippey/skip-reason#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }

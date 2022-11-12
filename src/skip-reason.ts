@@ -1,3 +1,14 @@
+declare const describe: {
+  (title: string, fn: () => void): void;
+  skip: (title: string, fn: () => void) => void;
+  only: (title: string, fn: () => void) => void;
+}
+declare const it: {
+  (title: string, fn: () => (void | Promise<void>)): void;
+  skip: (title: string, fn: () => (void | Promise<void>)) => void;
+  only: (title: string, fn: () => (void | Promise<void>)) => void;
+}
+
 /**
  * A more verbose version of `it.skip` that requires a reason.
  *
@@ -12,10 +23,12 @@
  */
 export function skipReason(reason: string) {
   const describeSkip = (title: string, fn: () => void) => {
-    describe.skip(`${title} (skipped: ${reason})`, fn);
+    describe
+      .skip(`${title} (skipped: ${reason})`, fn);
   };
-  const itSkip = (title: string, fn: () => void) => {
-    it.skip(`${title} (skipped: ${reason})`, fn);
+  const itSkip = (title: string, fn: () => (void | Promise<void>)) => {
+    it
+      .skip(`${title} (skipped: ${reason})`, fn);
   };
 
   // Also export the `skip/only` convenience methods:

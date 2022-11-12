@@ -22,9 +22,9 @@ Skip tests when a condition is true:
 ```js
 import { skipWhen } from 'skip-reason';
 
-const onMacOnly = skipWhen(process.platform !== 'darwin', 'this test is only needed on Mac');
+const onMac = skipWhen(process.platform !== 'darwin', 'this test is only needed on Mac');
 
-onMacOnly.it('example test', () => {
+onMac.it('example test', () => {
   // This test only runs on Mac.  On Linux or Windows, it will log:
   //   - example test (skipped: this test is only needed on Mac)
 });
