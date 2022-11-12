@@ -4,7 +4,7 @@
   "description": "Only skip tests if you have a good reason!",
   "main": "dist/skip-reason.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "check": "tsc --noEmit",
     "preversion": "npm run check",
     "prepublishOnly": "npm run build"
