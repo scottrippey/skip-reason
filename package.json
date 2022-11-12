@@ -1,6 +1,6 @@
 {
   "name": "skip-reason",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Only skip tests if you have a good reason!",
   "main": "dist/skip-reason.js",
   "scripts": {
