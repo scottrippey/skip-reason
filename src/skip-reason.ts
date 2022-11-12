@@ -23,12 +23,10 @@ declare const it: {
  */
 export function skipReason(reason: string) {
   const describeSkip = (title: string, fn: () => void) => {
-    describe
-      .skip(`${title} (skipped: ${reason})`, fn);
+    describe.skip(`${title} (skipped: ${reason})`, fn);
   };
   const itSkip = (title: string, fn: () => (void | Promise<void>)) => {
-    it
-      .skip(`${title} (skipped: ${reason})`, fn);
+    it.skip(`${title} (skipped: ${reason})`, fn);
   };
 
   // Also export the `skip/only` convenience methods:
