@@ -9,12 +9,20 @@ Example:
 ```js
 import { skipReason } from 'skip-reason';
 
-skipReason("test fails due to issue #1111").
-it("example test", () => { 
+const skip = skipReason("test fails due to issue #1111");
+skip.it("example test", () => { 
   // This test is skipped, and the logs show the reason:
   //  - example test (skipped: test fails due to issue #1111)
 });
 ```
+
+All of the following test methods and hooks are available:
+- `skip.describe(...)`
+- `skip.it(...)`
+- `skip.before(...)` or `skip.beforeAll(...)`
+- `skip.beforeEach(...)`
+- `skip.after(...)` or `skip.afterAll(...)`
+- `skip.afterEach(...)`
 
 # skip-when
 
@@ -29,3 +37,5 @@ onMac.it('example test', () => {
   //   - example test (skipped: this test is only needed on Mac)
 });
 ```
+
+Same return value as `skipReason`, but if the condition is false, then the real hooks are used.
